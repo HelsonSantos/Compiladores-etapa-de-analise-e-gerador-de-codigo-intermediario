@@ -16,7 +16,7 @@ O projeto tem como finalidade aplicar os principais conceitos estudados na disci
 
 # Estrutura do Projeto
 
-```txt
+```txt id="ks3z7s"
 tokens.h
 scanner.l
 parser.y
@@ -49,13 +49,13 @@ Para compilar e executar o projeto é necessário possuir:
 
 ## Linux (Fedora)
 
-```bash
+```bash id="rmjgw7"
 sudo dnf install gcc flex bison
 ```
 
 Opcionalmente:
 
-```bash
+```bash id="vtwtc7"
 sudo dnf install make
 ```
 
@@ -63,14 +63,14 @@ sudo dnf install make
 
 ## Linux (Ubuntu/Debian)
 
-```bash
+```bash id="o35x8r"
 sudo apt update
 sudo apt install gcc flex bison
 ```
 
 Opcionalmente:
 
-```bash
+```bash id="9a18t6"
 sudo apt install make
 ```
 
@@ -78,31 +78,49 @@ sudo apt install make
 
 ## Arch Linux
 
-```bash
+```bash id="2jg14k"
 sudo pacman -S gcc flex bison
 ```
 
 ---
 
-## Windows
+## Windows (WSL)
 
-### Opção recomendada: MSYS2
+### Instalação do WSL
 
-1. Instale o MSYS2:
-   - https://www.msys2.org/
+Abra o PowerShell como administrador e execute:
 
-2. Abra o terminal **MSYS2 MinGW64**
+```powershell id="8ttq74"
+wsl --install
+```
 
-3. Instale as dependências:
+Após a instalação:
 
-```bash
-pacman -S mingw-w64-x86_64-gcc flex bison
+- reinicie o computador;
+- abra novamente o PowerShell;
+- execute:
+
+```powershell id="s3f5x7"
+wsl
+```
+
+Isso abrirá o terminal Linux do WSL.
+
+---
+
+### Instalar dependências no Ubuntu (WSL)
+
+Dentro do terminal WSL execute:
+
+```bash id="5ry4tb"
+sudo apt update
+sudo apt install gcc flex bison
 ```
 
 Opcionalmente:
 
-```bash
-pacman -S make
+```bash id="6ezqte"
+sudo apt install make
 ```
 
 ---
@@ -182,7 +200,7 @@ A etapa semântica implementa:
 
 ## Tabela de Símbolos
 
-```txt
+```txt id="g7fqf4"
 Nome      Categoria   Tipo      Escopo
 -----------------------------------------
 x         variavel    integer   global
@@ -198,7 +216,7 @@ a         variavel    integer   teste
 
 ## Gerar o parser e scanner
 
-```bash
+```bash id="4jlwmx"
 bison -d -o parser.c parser.y
 flex -o scanner.c scanner.l
 gcc -o parser parser.c scanner.c symbol_table.c
@@ -208,7 +226,7 @@ gcc -o parser parser.c scanner.c symbol_table.c
 
 # Execução
 
-```bash
+```bash id="lr7kkw"
 ./parser < exemplo.pas
 ```
 
