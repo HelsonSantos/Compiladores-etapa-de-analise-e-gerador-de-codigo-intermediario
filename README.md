@@ -241,4 +241,5 @@ Durante o desenvolvimento foram aplicados conceitos fundamentais de compiladores
 
 # Autor
 
+Helson Gonçalves dos Santos Filho && Joana Beatriz Silva Brandão
 Projeto desenvolvido para fins acadêmicos na disciplina de Compiladores.
