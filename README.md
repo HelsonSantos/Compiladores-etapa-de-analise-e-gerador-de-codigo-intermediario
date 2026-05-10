@@ -6,11 +6,11 @@ Projeto desenvolvido para a disciplina de Compiladores com o objetivo de impleme
 
 O projeto tem como finalidade aplicar os principais conceitos estudados na disciplina, incluindo:
 
-* Análise Léxica
-* Análise Sintática
-* Análise Semântica
-* Tabela de Símbolos
-* Geração de Código Intermediário
+- Análise Léxica
+- Análise Sintática
+- Análise Semântica
+- Tabela de Símbolos
+- Geração de Código Intermediário
 
 ---
 
@@ -35,6 +35,78 @@ exemplo.pas
 
 ---
 
+# Pré-requisitos
+
+Para compilar e executar o projeto é necessário possuir:
+
+- GCC
+- Flex
+- Bison
+
+---
+
+# Instalação das Dependências
+
+## Linux (Fedora)
+
+```bash
+sudo dnf install gcc flex bison
+```
+
+Opcionalmente:
+
+```bash
+sudo dnf install make
+```
+
+---
+
+## Linux (Ubuntu/Debian)
+
+```bash
+sudo apt update
+sudo apt install gcc flex bison
+```
+
+Opcionalmente:
+
+```bash
+sudo apt install make
+```
+
+---
+
+## Arch Linux
+
+```bash
+sudo pacman -S gcc flex bison
+```
+
+---
+
+## Windows
+
+### Opção recomendada: MSYS2
+
+1. Instale o MSYS2:
+   - https://www.msys2.org/
+
+2. Abra o terminal **MSYS2 MinGW64**
+
+3. Instale as dependências:
+
+```bash
+pacman -S mingw-w64-x86_64-gcc flex bison
+```
+
+Opcionalmente:
+
+```bash
+pacman -S make
+```
+
+---
+
 # Funcionalidades Implementadas
 
 ## 1. Análise Léxica
@@ -43,34 +115,33 @@ O analisador léxico é responsável por transformar o código-fonte em tokens r
 
 ### Tokens reconhecidos
 
-* Palavras reservadas:
+- Palavras reservadas:
+  - `program`
+  - `var`
+  - `procedure`
+  - `begin`
+  - `end`
+  - `if`
+  - `then`
+  - `else`
+  - `while`
+  - `do`
 
-  * `program`
-  * `var`
-  * `procedure`
-  * `begin`
-  * `end`
-  * `if`
-  * `then`
-  * `else`
-  * `while`
-  * `do`
+- Identificadores
 
-* Identificadores
+- Números inteiros e reais
 
-* Números inteiros e reais
+- Operadores relacionais
 
-* Operadores relacionais
+- Operadores aritméticos
 
-* Operadores aritméticos
-
-* Delimitadores
+- Delimitadores
 
 Além disso, o scanner:
 
-* ignora comentários;
-* controla linha e coluna;
-* gera uma tabela de tokens.
+- ignora comentários;
+- controla linha e coluna;
+- gera uma tabela de tokens.
 
 ---
 
@@ -80,13 +151,13 @@ A análise sintática foi implementada com Bison utilizando a gramática do subc
 
 O parser reconhece:
 
-* declarações de variáveis;
-* procedures;
-* atribuições;
-* estruturas `if/then/else`;
-* estruturas `while/do`;
-* expressões aritméticas e relacionais;
-* blocos `begin/end`.
+- declarações de variáveis;
+- procedures;
+- atribuições;
+- estruturas `if/then/else`;
+- estruturas `while/do`;
+- expressões aritméticas e relacionais;
+- blocos `begin/end`.
 
 ---
 
@@ -94,16 +165,16 @@ O parser reconhece:
 
 A etapa semântica implementa:
 
-* tabela de símbolos;
-* controle de escopo;
-* verificação de redeclaração;
-* verificação de identificadores não declarados;
-* verificação de compatibilidade de tipos.
+- tabela de símbolos;
+- controle de escopo;
+- verificação de redeclaração;
+- verificação de identificadores não declarados;
+- verificação de compatibilidade de tipos.
 
 ### Escopos suportados
 
-* Escopo global
-* Escopo local de procedures
+- Escopo global
+- Escopo local de procedures
 
 ---
 
@@ -145,10 +216,10 @@ gcc -o parser parser.c scanner.c symbol_table.c
 
 # Tecnologias Utilizadas
 
-* C
-* Flex
-* Bison
-* GCC
+- C
+- Flex
+- Bison
+- GCC
 
 ---
 
@@ -156,18 +227,18 @@ gcc -o parser parser.c scanner.c symbol_table.c
 
 Durante o desenvolvimento foram aplicados conceitos fundamentais de compiladores, como:
 
-* Expressões regulares
-* Gramáticas livres de contexto
-* Parsers LR
-* Tokens
-* Tabela de símbolos
-* Escopo
-* Verificação de tipos
-* Estruturas sintáticas
-* Análise semântica
+- Expressões regulares
+- Gramáticas livres de contexto
+- Parsers LR
+- Tokens
+- Tabela de símbolos
+- Escopo
+- Verificação de tipos
+- Estruturas sintáticas
+- Análise semântica
 
 ---
 
 # Autor
 
-Helson Gonçalves dos Santos Filho && Joana Beatriz Silva Brandão
+Projeto desenvolvido para fins acadêmicos na disciplina de Compiladores.
